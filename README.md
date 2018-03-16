@@ -5,8 +5,8 @@ math equation test:
 <img src="https://latex.codecogs.com/gif.latex?X[n]&space;=&space;\sum_{k=0}^{N-1}x[k]\exp({-j\frac{2&space;\pi&space;nk}{N}})"/>  
 <img src="https://latex.codecogs.com/gif.latex?\inline&space;X[n]&space;\in&space;\mathbb{C}" />  
 
-diffusion equation:
-<img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2\psi&space;=&space;D\frac{\partial\psi}{\partial&space;t}" title="\vec{\nabla}^2\psi = D\frac{\partial\psi}{\partial t}" />
+diffusion equation:  
+<img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2\psi&space;=&space;D\frac{\partial\psi}{\partial&space;t}" title="\vec{\nabla}^2\psi = D\frac{\partial\psi}{\partial t}" />  
 <img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2&space;=&space;\frac{\partial}{\partial&space;x^2}&space;&plus;&space;\frac{\partial}{\partial&space;y^2}&space;&plus;&space;\frac{\partial}{\partial&space;z^2}" title="\vec{\nabla}^2 = \frac{\partial}{\partial x^2} + \frac{\partial}{\partial y^2} + \frac{\partial}{\partial z^2}" />  
   
 Nekrasov partition function:  
