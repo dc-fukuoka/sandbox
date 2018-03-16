@@ -7,7 +7,7 @@ math equation test:
 
 diffusion equation:  
 <img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2\psi&space;=&space;D\frac{\partial\psi}{\partial&space;t}" title="\vec{\nabla}^2\psi = D\frac{\partial\psi}{\partial t}" />  
-<img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2&space;=&space;\frac{\partial}{\partial&space;x^2}&space;&plus;&space;\frac{\partial}{\partial&space;y^2}&space;&plus;&space;\frac{\partial}{\partial&space;z^2}" title="\vec{\nabla}^2 = \frac{\partial}{\partial x^2} + \frac{\partial}{\partial y^2} + \frac{\partial}{\partial z^2}" />  
+<img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2&space;=&space;\frac{\partial^2}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;y^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;z^2}" title="\vec{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}" />  
   
 Nekrasov partition function:  
 <img src="https://latex.codecogs.com/gif.latex?Z(a,&space;\epsilon_1,&space;\epsilon_2;&space;q)&space;=&space;\sum_{k=0}^{\infty}q^k\oint_{\tilde{\emph{M}}_k}1" title="Z(a, \epsilon_1, \epsilon_2; q) = \sum_{k=0}^{\infty}q^k\oint_{\tilde{\emph{M}}_k}1" />  
