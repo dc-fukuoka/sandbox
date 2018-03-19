@@ -6,7 +6,7 @@ math equation test:
 <img src="https://latex.codecogs.com/gif.latex?\inline&space;X[n]&space;\in&space;\mathbb{C}" />  
 
 diffusion equation:  
-<img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2\psi&space;=&space;D\frac{\partial\psi}{\partial&space;t}" title="\vec{\nabla}^2\psi = D\frac{\partial\psi}{\partial t}" />  
+<img src="https://latex.codecogs.com/gif.latex?D\nabla^2&space;\psi&space;=&space;\frac{\partial&space;\psi}{\partial&space;t}" title="D\nabla^2 \psi = \frac{\partial \psi}{\partial t}" />  
 <img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2&space;=&space;\frac{\partial^2}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;y^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;z^2}" title="\vec{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}" />  
   
 Nekrasov partition function:  
