@@ -1,13 +1,5 @@
 sandbox
 ===
-
-math equation test:  
-<img src="https://latex.codecogs.com/gif.latex?X[n]&space;=&space;\sum_{k=0}^{N-1}x[k]\exp({-j\frac{2&space;\pi&space;nk}{N}})"/>  
-<img src="https://latex.codecogs.com/gif.latex?\inline&space;X[n]&space;\in&space;\mathbb{C}" />  
-
-diffusion equation:  
-<img src="https://latex.codecogs.com/gif.latex?D\nabla^2&space;\psi&space;=&space;\frac{\partial&space;\psi}{\partial&space;t}" title="D\nabla^2 \psi = \frac{\partial \psi}{\partial t}" />  
-<img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2&space;=&space;\frac{\partial^2}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;y^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;z^2}" title="\vec{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}" />  
 explicit method
 ====
 * discretize this by central difference, time direction is forward difference
@@ -34,6 +26,15 @@ Crank-Nicolson method
 <img src="https://latex.codecogs.com/gif.latex?c_1\left&space;(&space;A_{new}(\mathbf{g}&plus;1)&plus;A_{new}(\mathbf{g}-1)&plus;A_{new}(\matbf{g}&plus;(I_{max}&plus;2))&plus;A_{new}(\mathbf{g}-(I_{max}&plus;2))&plus;A_{new}(\mathbf{g}&plus;(I_{max}&plus;2)(J_{max}&plus;2))&plus;A_{new}(\mathbf{g}-(I_{max}&plus;2)(J_{max}&plus;2))&space;\right&space;)&space;&plus;&space;c_2A_{new}(\mathbf{g})&space;=&space;\newline&space;c_3\left&space;(&space;A(\mathbf{g}&plus;1)&plus;A(\mathbf{g}-1)&plus;A(\matbf{g}&plus;(I_{max}&plus;2))&plus;A(\mathbf{g}-(I_{max}&plus;2))&plus;A(\mathbf{g}&plus;(I_{max}&plus;2)(J_{max}&plus;2))&plus;A(\mathbf{g}-(I_{max}&plus;2)(J_{max}&plus;2))&space;\right&space;)&space;&plus;&space;c_4A(\mathbf{g})&space;\newline&space;\therefore&space;M_1&space;\vec{x}&space;=&space;M_2&space;\vec{y}" title="c_1\left ( A_{new}(\mathbf{g}+1)+A_{new}(\mathbf{g}-1)+A_{new}(\matbf{g}+(I_{max}+2))+A_{new}(\mathbf{g}-(I_{max}+2))+A_{new}(\mathbf{g}+(I_{max}+2)(J_{max}+2))+A_{new}(\mathbf{g}-(I_{max}+2)(J_{max}+2)) \right ) + c_2A_{new}(\mathbf{g}) = \newline c_3\left ( A(\mathbf{g}+1)+A(\mathbf{g}-1)+A(\matbf{g}+(I_{max}+2))+A(\mathbf{g}-(I_{max}+2))+A(\mathbf{g}+(I_{max}+2)(J_{max}+2))+A(\mathbf{g}-(I_{max}+2)(J_{max}+2)) \right ) + c_4A(\mathbf{g}) \newline \therefore M_1 \vec{x} = M_2 \vec{y}" />
 solve this against Anew  
 
+tests
+====
+math equation test:  
+<img src="https://latex.codecogs.com/gif.latex?X[n]&space;=&space;\sum_{k=0}^{N-1}x[k]\exp({-j\frac{2&space;\pi&space;nk}{N}})"/>  
+<img src="https://latex.codecogs.com/gif.latex?\inline&space;X[n]&space;\in&space;\mathbb{C}" />  
+
+diffusion equation:  
+<img src="https://latex.codecogs.com/gif.latex?D\nabla^2&space;\psi&space;=&space;\frac{\partial&space;\psi}{\partial&space;t}" title="D\nabla^2 \psi = \frac{\partial \psi}{\partial t}" />  
+<img src="https://latex.codecogs.com/gif.latex?\vec{\nabla}^2&space;=&space;\frac{\partial^2}{\partial&space;x^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;y^2}&space;&plus;&space;\frac{\partial^2}{\partial&space;z^2}" title="\vec{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}" />  
   
 Nekrasov partition function:  
 <img src="https://latex.codecogs.com/gif.latex?Z(a,&space;\epsilon_1,&space;\epsilon_2;&space;q)&space;=&space;\sum_{k=0}^{\infty}q^k\oint_{\tilde{\emph{M}}_k}1" title="Z(a, \epsilon_1, \epsilon_2; q) = \sum_{k=0}^{\infty}q^k\oint_{\tilde{\emph{M}}_k}1" />  
