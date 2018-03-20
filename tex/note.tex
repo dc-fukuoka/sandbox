@@ -4,16 +4,14 @@
 \author{D.Fukuoka}
 \begin{document}
 \maketitle
-diffusion equation
+3D diffusion equation is
 \begin{equation}
   \label{diffusion}
-  D\nabla^2 \psi = \frac{\partial \psi}{\partial t} \\
+  D\vec{\nabla}^2 \psi = \frac{\partial \psi}{\partial t} \\
 \end{equation}
 where $\vec{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \nonumber$.
-\begin{itemize}
-\item explicit method \\
+\section{explicit method}
   discretize (\ref{diffusion}) by central difference, time direction is forward difference
-\end{itemize}
 \begin{multline}
   \frac{(A^{n+1}(i,j,k)-A^n(i,j,k))}{\Delta t} = \\
   D( \frac{A^n(i+1,j,k)x-2A^n(i,j,k)+A^n(i-1,j,k)}{\Delta x^2} + \\
@@ -38,4 +36,44 @@ set $A^{n+1} = A_{new}, A^n = A$
   c_1\left (A(i+1,j,k)+A(i-1,j,k)+A(i,j+1,k)+A(i,j-1,k)+A(i,j,k+1)+A(i,j,k-1)\right ) + \\
   c_2A(i,j,k)
 \end{multline}
+
+\section{implicit method}
+  discretize (\ref{diffusion}) by central difference, time direction is backward difference
+\begin{multline}
+  \frac{(A^{n+1}(i,j,k)-A^n(i,j,k))}{\Delta t} = \\
+  \frac{D}{\Delta x^2}(A^{n+1}(i+1,j,k)-2A^{n+1}(i,j,k)+A^{n+1}(i-1,j,k) + \\
+  A^{n+1}(i,j+1,k)-2A^{n+1}(i,j,k)+A^{n+1}(i,j-1,k) + \\
+  A^{n+1}(i,j,k+1)-2A^{n+1}(i,j,k)+A^{n+1}(i,j,k-1))
+\end{multline}
+\begin{multline}
+  -\frac{D\Delta t}{\Delta x^2}(A^{n+1}(i+1,j,k)+A^{n+1}(i-1,j,k) + \\
+  A^{n+1}(i,j+1,k)+A^{n+1}(i,j-1,k) + \\
+  A^{n+1}(i,j,k+1)+A^{n+1}(i,j,k-1)) + \\
+  \left ( 1 + \frac{6D\Delta t}{\Delta x^2} \right )A^{n+1}(i,j,k) = \\
+  A^n(i,j,k)
+\end{multline}
+set $c_1 = -\frac{D\Delta t}{\Delta x^2}, c_2 = \left ( 1 + \frac{6D\Delta t}{\Delta x^2} \right )$
+$A^{n+1} = A_{new}, A^n = A$
+\begin{multline}
+  \therefore c_1(A_{new}(i+1,j,k)+A_{new}(i-1,j,k) + \\
+  A_{new}(i,j+1,k)+A_{new}(i,j-1,k) + \\
+  A_{new}(i,j,k+1)+A_{new}(i,j,k-1)) + \\
+  c_2A_{new}(i,j,k) = \\
+  A(i,j,k)
+\end{multline}
+interpret $A(i,j,k) = A(0:I_{max}+1, 0:J_{max}+1, 0:K_{max}+1)$ as one dimensional array with column major order, use $\mathbf{g}$ as the global index for $i,j,k$,
+\begin{equation}
+  \mathbf{g} = i + (I_{max}+2)*j + (I_{max}+2)*(J_{max}+2)*k
+\end{equation}
+\begin{multline}
+  c_1(A_{new}(\mathbf{g}+1)+A_{new}(\mathbf{g}-1) + \\
+  A_{new}(\mathbf{g}+(I_{max}+2))+A_{new}(\mathbf{g}-(I_{max}+2)) +
+  A_{new}(\mathbf{g}+(I_{max}+2)(J_{max}+2))+A_{new}(\mathbf{g}-(I_{max}+2)(J_{max}+2))) + \\
+  c_2A_{new}(\mathbf{g}) = \\
+  A(\mathbf{g})
+\end{multline}
+\begin{equation}
+  \therefore M\vec{A}_{new} = \vec{A}
+\end{equation}
+need to solve this sparse linear system(7 point stencil matrix) with respect to $A_{new}$ for each time step.
 \end{document}
