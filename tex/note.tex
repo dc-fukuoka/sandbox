@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\title{some notes for diffusion equation with finite difference method}
+\author{D.Fukuoka}
+\begin{document}
+\maketitle
+diffusion equation
+\begin{equation}
+  \label{diffusion}
+  D\nabla^2 \psi = \frac{\partial \psi}{\partial t} \\
+\end{equation}
+where $\vec{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \nonumber$.
+\begin{itemize}
+\item explicit method \\
+  discretize (\ref{diffusion}) by central difference, time direction is forward difference
+\end{itemize}
+\begin{multline}
+  \frac{(A^{n+1}(i,j,k)-A^n(i,j,k))}{\Delta t} = \\
+  D( \frac{A^n(i+1,j,k)x-2A^n(i,j,k)+A^n(i-1,j,k)}{\Delta x^2} + \\
+  \frac{A^n(i,j+1,k)x-2A^n(i,j,k)+A^n(i,j-1,k)}{\Delta y^2} + \\
+  \frac{A^n(\ i,j,k+1)x-2A^n(i,j,k)+A^n(i,j,k-1)}{\Delta z^2})
+\end{multline}
+to make it simple, set $\Delta x = \Delta y = \Delta z$
+\begin{multline}
+  A^{n+1}(i,j,k) = \\
+  \frac{D\Delta t}{\Delta x^2}\left (A^n(i+1,j,k)+A^n(i-1,j,k)+A^n(i,j+1,k)+A^n(i,j-1,k)+A^n(i,j,k+1)+A^n(i,j,k-1)\right ) + \\
+  \left ( 1-\frac{6D\Delta t}{\Delta x^2}\right )A^n(i,j,k) \\
+\end{multline}
+$c_1 = \frac{D\Delta t}{\Delta x^2}, c_2 = 1-6\frac{D\Delta t}{\Delta x^2}$,
+\begin{multline}
+  A^{n+1}(i,j,k) = \\
+  c_1\left (A^n(i+1,j,k)+A^n(i-1,j,k)+A^n(i,j+1,k)+A^n(i,j-1,k)+A^n(i,j,k+1)+A^n(i,j,k-1)\right ) + \\
+  c_2A^n(i,j,k)
+\end{multline}
+set $A^{n+1} = A_{new}, A^n = A$
+\begin{multline}
+  \therefore A_{new}(i,j,k) = \\
+  c_1\left (A(i+1,j,k)+A(i-1,j,k)+A(i,j+1,k)+A(i,j-1,k)+A(i,j,k+1)+A(i,j,k-1)\right ) + \\
+  c_2A(i,j,k)
+\end{multline}
+\end{document}
