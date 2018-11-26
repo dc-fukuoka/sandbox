@@ -8,11 +8,12 @@ OUT    = $(SRC:%.tex=%.pdf)
 
 .tex.dvi:
 	$(LATEX) $<
-	$(LATEX) $< # workaround for a warning of a reference of an equationo
+	$(LATEX) $< # workaround for a warning of a reference of an equation
+
 $(OUT): $(DVI)
 	$(DVIPDF) $^
 
-ALL:
-	latex 
+ALL: $(OUT)
+
 clean:
 	rm -f *.log *.dvi *.ps *.pdf *.aux *~
